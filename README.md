@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+[笔记详情链接, 戳一下](https://segmentfault.com/n/1330000016211750?token=8dd6734828eb4301f99df97082881af1)
+
 ## Build Setup
 
 ``` bash
