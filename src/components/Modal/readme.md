@@ -1,12 +1,13 @@
 # 隐式创建vue实例笔记
+> **解决的问题**: 想做一个全局的模态框, 但是并不想在每一个`.vue`组件里写一个`<my-modal></my-modal>`; 如果能想`iview`那样直接通过`this.$Message.success()`的方式调用多好; 能不能实现呢? 能.
 
-## 制作Vue组件
+## 一. 制作Vue组件
 `src/components/Modal/modal.vue`
 > 主要思路, 在methods中写几个方法, 供生成实例的时候调用
 
 具体写法: 略
 
-## 给model组件绑定生成实例的方法, 用于生成实例(实例暴露出供外界调用的方法)
+## 二. 给model组件绑定生成实例的方法, 用于生成实例(实例暴露出供外界调用的方法)
 `src/components/Modal/modal.js`
 ### 主要思路
 1. 引入`modal.vue`, 并绑定实例方法用于新建实例(createInstance);
@@ -48,7 +49,7 @@ export default modal
 
 3. 将刚刚增加完实例方法的modal暴露出去
 
-## 调用实例, 制作几个快捷的提示框
+## 三. 调用实例, 制作几个快捷的提示框
 `src/components/Modal/index.js`
 
 ### 主要思路
@@ -78,7 +79,7 @@ const modalInstance = {
 Vue.prototype.$myModal = modalInstance
 ```
 
-## 使用方式
+## 四. 使用方式
 `src/components/HelloWrold.vue`
 ```javascript
 this.$myModal.success()
